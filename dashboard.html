@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JFS Empréstimos Consignados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-nav">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>JFS</h1>
+                        <p>Dashboard Administrativo</p>
+                    </div>
+                </div>
+                <div class="dashboard-actions">
+                    <span id="currentUser" class="current-user"></span>
+                    <button onclick="logout()" class="logout-btn">Sair</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total de Leads</h3>
+                    <div class="stat-number" id="totalLeads">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Leads Hoje</h3>
+                    <div class="stat-number" id="leadsToday">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Leads Esta Semana</h3>
+                    <div class="stat-number" id="leadsWeek">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Leads Este Mês</h3>
+                    <div class="stat-number" id="leadsMonth">0</div>
+                </div>
+            </div>
+
+            <div class="leads-table">
+                <div class="table-header">
+                    <h3>Solicitações de Empréstimo</h3>
+                    <p>Lista de todas as solicitações recebidas através do formulário</p>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>CPF/CNPJ</th>
+                                <th>Valor Desejado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leadsTableBody">
+                            <!-- Leads will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4"></path>
+                        <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h9l4 4V12z"></path>
+                    </svg>
+                    <h3>Nenhuma solicitação ainda</h3>
+                    <p>As solicitações de empréstimo aparecerão aqui quando os clientes preencherem o formulário.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
